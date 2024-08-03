@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hugo Figuera</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+<body>
+  <div class="home-container">
+    <header class="home-header">
+      <h1 class="artist-name">Hugo Figuera</h1>
+    </header>
+
+    <section class="artwork-section">
+      <h2>Artworks</h2>
+      <div class="artwork-list">
+        <% @productions.each do |production| %>
+          <div class="artwork-item">
+            <h3><%= production.title %></h3>
+            <p><%= production.description %></p>
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+              src="https://w.soundcloud.com/player/?url=<%= production.soundcloud_url %>&color=%2300f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+            </iframe>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <footer class="soundcloud-player">
+      <h2>Listen on SoundCloud</h2>
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/TRACK_ID&color=%2300f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+      </iframe>
+    </footer>
+
+    <footer class="bio-footer">
+      <a href="<%= biography_path %>" class="bio-button">Biography</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+module BiograpfyHelper
+end
