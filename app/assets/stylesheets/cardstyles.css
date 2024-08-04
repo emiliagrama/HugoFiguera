@@ -1,0 +1,83 @@
+/* app/assets/stylesheets/cqrdstyles.css */
+.card {
+  width: 190px;
+  height: 190px;
+  background: rgb(45, 45, 45);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: rgb(0, 0, 0);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+}
+
+.first-content, .second-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  transition: opacity 0.3s ease, height 0.3s ease, font-size 0.3s ease, transform 0.3s ease;
+}
+
+.first-content {
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.card:hover .first-content {
+  opacity: 0;
+  height: 0;
+}
+
+.second-content {
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  height: 100%;
+  font-size: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.95);
+}
+
+.card:hover .second-content {
+  opacity: 1;
+  font-size: 1.2rem;
+  transform: scale(1);
+}
+
+/* Footer styles */
+.bio-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.bio-button {
+  color: #00f;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: 2px solid #00f;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.bio-button:hover {
+  background-color: #00f;
+  color: #fff;
+}
